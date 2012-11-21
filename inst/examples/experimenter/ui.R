@@ -1,5 +1,5 @@
-library(shiny)
-library(shinyExt)
+# library(shiny)
+# library(shinyExt)
 
 # Define UI for dataset viewer application
 shinyUI(pageWithSidebar(
@@ -18,18 +18,22 @@ shinyUI(pageWithSidebar(
     selectInput("dataset", "Choose a dataset:", 
                 choices = c("rock", "pressure", "cars")),
     
-    numericInput("obs", "Number of observations to view:", 10)
+    numericInput("obs", "Number of observations to view:", 10),
+    actionButton("btn_newSample","Generate new sample")
   ),
   
   
   # Show the caption, a summary of the dataset and an HTML table with
   # the requested number of observations
   mainPanel(
-    h3(textOutput("caption")), 
-    textOutput("pwd"),
-    
-    verbatimTextOutput("summary"), 
-    
-    tableOutput("view")
+    tabsetPanel(
+      tabPanel("Plot", plotOutput("plot")),
+      tabPanel("Summary", {
+        h3(textOutput("caption"))
+        verbatimTextOutput("summary")
+      }),
+      tabPanel("Table", tableOutput("view")),
+      tabPanel("Secret", textOutput("pwd"))
+    )
   )
 ))

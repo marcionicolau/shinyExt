@@ -1,4 +1,4 @@
-library(shiny)
+# library(shiny)
 library(datasets)
 
 # Define server logic required to summarize and view the selected dataset
@@ -50,5 +50,10 @@ shinyServer(function(input, output) {
   # input$obs is changed. 
   output$view <- reactiveTable(function() {
     head(datasetInput(), n = input$obs)
+  })
+  
+  output$plot <- reactivePlot(function() {
+    input$btn_newSample
+    hist(rnorm(20))
   })
 })
