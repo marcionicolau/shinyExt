@@ -26,6 +26,7 @@ shinyUI(pageWithSidebar(
   # the requested number of observations
   mainPanel(
     h3(textOutput("caption")), 
+    textOutput("pwd"),
     
     verbatimTextOutput("summary"), 
     

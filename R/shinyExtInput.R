@@ -14,12 +14,13 @@
 passwordInput <- function(inputId, label) {
   addResourcePath(
     prefix='passwordInput',
-    directoryPath =  system.file('inputExt',
+    directoryPath =  system.file('input-ext',
                                  package='shinyExt')
     )
   tagList(
-    singleton(tags$head(tags$script(src = 'inputExt/inputExt.js'))),
+    singleton(tags$head(tags$script(src = 'input-ext/input-ext.js'))),
     tags$label(label),
     tags$input(id = inputId, type="password", value="")
   )
 }
+

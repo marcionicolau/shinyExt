@@ -15,5 +15,4 @@ LaTeX: pdfLaTeX
 BuildType: Package
 PackageInstallArgs: --no-multiarch
 PackageBuildArgs: --md5
-PackageCheckArgs: --as-cran
 PackageRoxygenize: rd,collate,namespace

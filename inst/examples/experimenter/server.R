@@ -33,6 +33,10 @@ shinyServer(function(input, output) {
     input$caption
   })
   
+  output$pwd <- reactiveText(function() {
+    input$passwd
+  })
+  
   # The output$summary depends on the datasetInput reactive function, 
   # so will be re-executed whenever datasetInput is re-executed 
   # (i.e. whenever the input$dataset changes)
