@@ -13,7 +13,7 @@
 #' @export
 passwordInput <- function(inputId, label) {
   addResourcePath(
-    prefix='passwordInput',
+    prefix='input-ext',
     directoryPath =  system.file('input-ext',
                                  package='shinyExt')
     )

@@ -13,7 +13,7 @@ actionButton <- function(inputId, label) {
   addResourcePath(
     prefix='actionbutton', 
     directoryPath=system.file('actionbutton', 
-                              package='shinyIncubator'))
+                              package='shinyExt'))
   tagList(
     singleton(tags$head(tags$script(src = 'actionbutton/actionbutton.js'))),
     tags$button(id=inputId, type="button", class="btn action-button", label)
