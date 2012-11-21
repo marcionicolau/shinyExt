@@ -3,38 +3,34 @@
 \alias{shinyExt}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+shinyExp
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+Add Extra functionalities from jQuery and Twitter Bootstrap for shiny.
 }
 \details{
 \tabular{ll}{
 Package: \tab shinyExt\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 0.0.1\cr
 Date: \tab 2012-11-21\cr
-License: \tab What license is it under?\cr
+License: \tab GPL-3\cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
+Use in the same way like shiny package
 }
 \author{
-Who wrote it
+Marcio Nicolau
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Maintainer: Marcio Nicolau <marcionicolau@me.com>
 }
 \references{
-~~ Literature or other references for background information ~~
+jQuery
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
 \seealso{
 ~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+~~ \code{\link[shiny:shiny-package]{shiny}} ~~
 }
 \examples{
-~~ simple examples of the most important functions ~~
+
 }

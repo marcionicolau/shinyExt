@@ -8,6 +8,8 @@
 #' 
 #' @examples
 #' passwordInput("passwd", "Password:")
+#' 
+#' @import shiny 
 #' @export
 passwordInput <- function(inputId, label) {
   addResourcePath(
