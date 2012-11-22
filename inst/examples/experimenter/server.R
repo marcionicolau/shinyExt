@@ -54,6 +54,18 @@ shinyServer(function(input, output) {
   
   output$plot <- reactivePlot(function() {
     input$btn_newSample
-    hist(rnorm(20))
+    n = 100 * input$obs
+    hist(rnorm(n))
   })
+  
+  output$downloadData <- downloadHandler(
+    filename = function() {
+      paste('data-', Sys.Date(), '.csv', sep='')
+    },
+    content = function(con) {
+      write.csv2(head(datasetInput(), n = input$obs), 
+                 con, 
+                 row.names=FALSE)
+    }
+  )
 })

@@ -12,14 +12,15 @@ shinyUI(pageWithSidebar(
   # to the caption in the textInput control are updated in the output
   # area immediately as you type
   sidebarPanel(
+    actionButton("btn_newSample","Generate new sample"),
     textInput("caption", "Caption:", "Data Summary"),
     passwordInput("passwd", "Password:"),
     
     selectInput("dataset", "Choose a dataset:", 
                 choices = c("rock", "pressure", "cars")),
     
-    numericInput("obs", "Number of observations to view:", 10),
-    actionButton("btn_newSample","Generate new sample")
+    numericInput("obs", "Number of observations to view:", 10)
+    
   ),
   
   
@@ -28,11 +29,15 @@ shinyUI(pageWithSidebar(
   mainPanel(
     tabsetPanel(
       tabPanel("Plot", plotOutput("plot")),
-      tabPanel("Summary", {
-        h3(textOutput("caption"))
-        verbatimTextOutput("summary")
-      }),
-      tabPanel("Table", tableOutput("view")),
+      tabPanel("Summary", 
+               h3(textOutput("caption")), 
+               br(),
+               verbatimTextOutput("summary")
+      ),
+      tabPanel("Table", 
+               downloadLink('downloadData'),
+               tableOutput("view")               
+      ),
       tabPanel("Secret", textOutput("pwd"))
     )
   )
