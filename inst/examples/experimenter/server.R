@@ -1,4 +1,4 @@
-library(shiny)
+# library(shiny)
 library(datasets)
 
 # Define server logic required to summarize and view the selected dataset
@@ -33,6 +33,10 @@ shinyServer(function(input, output) {
     input$caption
   })
   
+  output$pwd <- reactiveText(function() {
+    input$passwd
+  })
+  
   # The output$summary depends on the datasetInput reactive function, 
   # so will be re-executed whenever datasetInput is re-executed 
   # (i.e. whenever the input$dataset changes)
@@ -47,4 +51,21 @@ shinyServer(function(input, output) {
   output$view <- reactiveTable(function() {
     head(datasetInput(), n = input$obs)
   })
+  
+  output$plot <- reactivePlot(function() {
+    input$btn_newSample
+    n = 100 * input$obs
+    hist(rnorm(n))
+  })
+  
+  output$downloadData <- downloadHandler(
+    filename = function() {
+      paste('data-', Sys.Date(), '.csv', sep='')
+    },
+    content = function(con) {
+      write.csv2(head(datasetInput(), n = input$obs), 
+                 con, 
+                 row.names=FALSE)
+    }
+  )
 })

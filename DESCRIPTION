@@ -1,11 +1,11 @@
 Package: shinyExt
 Type: Package
 Title: Extensions functions for Shiny
-Version: 0.0.1
-Date: 2012-11-21
+Version: 0.0.2
+Date: 2012-11-22
 Author: Marcio Nicolau
 Maintainer: Marcio Nicolau <marcionicolau@me.com>
-Description: Extensions from jQuery and Twitter Bootstrap functionalities. 
+Description: Extensions from jQuery and Twitter Bootstrap functionalities.
 License: GPL-3
 Depends:
     R (>= 2.14.1)
@@ -22,3 +22,5 @@ Imports:
     shiny (>= 0.1.5)
 URL: https://github.com/marcionicolau/shinyExt
 BugReports: https://github.com/marcionicolau/shinyExt/issues
+Collate:
+    'shinyExtInput.R'

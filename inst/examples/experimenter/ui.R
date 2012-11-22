@@ -1,5 +1,5 @@
-library(shiny)
-library(shinyExt)
+# library(shiny)
+# library(shinyExt)
 
 # Define UI for dataset viewer application
 shinyUI(pageWithSidebar(
@@ -12,6 +12,7 @@ shinyUI(pageWithSidebar(
   # to the caption in the textInput control are updated in the output
   # area immediately as you type
   sidebarPanel(
+    actionButton("btn_newSample","Generate new sample"),
     textInput("caption", "Caption:", "Data Summary"),
     passwordInput("passwd", "Password:"),
     
@@ -19,16 +20,25 @@ shinyUI(pageWithSidebar(
                 choices = c("rock", "pressure", "cars")),
     
     numericInput("obs", "Number of observations to view:", 10)
+    
   ),
   
   
   # Show the caption, a summary of the dataset and an HTML table with
   # the requested number of observations
   mainPanel(
-    h3(textOutput("caption")), 
-    
-    verbatimTextOutput("summary"), 
-    
-    tableOutput("view")
+    tabsetPanel(
+      tabPanel("Plot", plotOutput("plot")),
+      tabPanel("Summary", 
+               h3(textOutput("caption")), 
+               br(),
+               verbatimTextOutput("summary")
+      ),
+      tabPanel("Table", 
+               downloadLink('downloadData'),
+               tableOutput("view")               
+      ),
+      tabPanel("Secret", textOutput("pwd"))
+    )
   )
 ))
