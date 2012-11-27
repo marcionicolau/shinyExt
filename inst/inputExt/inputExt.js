@@ -58,4 +58,41 @@ jQuery(function($) {
     }
   });
   Shiny.inputBindings.register(actionButtonBinding);
+  
+  // daterangePicker
+  var daterangePickerBinding = new Shiny.InputBinding();
+  $.extend(daterangePickerBinding, {
+    find: function(scope) {
+      return $(scope).find('input[name="daterange-picker"]');
+    },
+    getId: function(el) {
+      return Shiny.InputBinding.prototype.getId.call(this, el) || el.name;
+    },
+    getValue: function(el) {
+      return el.value;
+    },
+    setValue: function(el, value) {
+      el.value = value;
+    },
+    subscribe: function(el, callback) {
+      $(el).on('keyup.daterangePickerBinding input.daterangePickerBinding', function(event) {
+        callback(true);
+      });
+      $(el).on('change.daterangePickerBinding', function(event) {
+        callback(false);
+      });
+    },
+    unsubscribe: function(el) {
+      $(el).off('.daterangePickerBinding');
+    },
+    getRatePolicy: function() {
+      return {
+        policy: 'debounce',
+        delay: 250
+      };
+    }    
+  });
+  Shiny.inputBindings.register(daterangePickerBinding, 'shiny.daterangePicker');
+//  var drp = $.find('input[name=daterange-picker]');
+//  $(drp).daterangepicker();
 })

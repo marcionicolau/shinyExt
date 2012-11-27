@@ -1,5 +1,5 @@
-# library(shiny)
-# library(shinyExt)
+library(shiny)
+library(shinyExt)
 
 # Define UI for dataset viewer application
 shinyUI(pageWithSidebar(
@@ -19,7 +19,9 @@ shinyUI(pageWithSidebar(
     selectInput("dataset", "Choose a dataset:", 
                 choices = c("rock", "pressure", "cars")),
     
-    numericInput("obs", "Number of observations to view:", 10)
+    numericInput("obs", "Number of observations to view:", 10),
+    
+    daterangePicker("date_range", "Select Period:")
     
   ),
   
