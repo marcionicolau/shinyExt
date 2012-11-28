@@ -1,3 +1,7 @@
 export(actionButton)
+<<<<<<< HEAD
+=======
+export(daterangePicker)
+>>>>>>> RStudio
 export(passwordInput)
 import(shiny)

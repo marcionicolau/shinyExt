@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # library(shiny)
 # library(shinyExt)
+=======
+library(shiny)
+library(shinyExt)
+>>>>>>> RStudio
 
 # Define UI for dataset viewer application
 shinyUI(pageWithSidebar(
@@ -19,7 +24,13 @@ shinyUI(pageWithSidebar(
     selectInput("dataset", "Choose a dataset:", 
                 choices = c("rock", "pressure", "cars")),
     
+<<<<<<< HEAD
     numericInput("obs", "Number of observations to view:", 10)
+=======
+    numericInput("obs", "Number of observations to view:", 10),
+    
+    daterangePicker("input_period", "Select a window period:")
+>>>>>>> RStudio
     
   ),
   
@@ -38,7 +49,15 @@ shinyUI(pageWithSidebar(
                downloadLink('downloadData'),
                tableOutput("view")               
       ),
+<<<<<<< HEAD
       tabPanel("Secret", textOutput("pwd"))
+=======
+      tabPanel("Secret", 
+               textOutput("pwd"),
+               br(),
+               textOutput("filter_date1"),
+               textOutput("filter_date2"))
+>>>>>>> RStudio
     )
   )
 ))

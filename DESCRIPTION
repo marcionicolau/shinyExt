@@ -1,8 +1,13 @@
 Package: shinyExt
 Type: Package
 Title: Extensions functions for Shiny
+<<<<<<< HEAD
 Version: 0.0.2
 Date: 2012-11-22
+=======
+Version: 0.0.3
+Date: 2012-11-27
+>>>>>>> RStudio
 Author: Marcio Nicolau
 Maintainer: Marcio Nicolau <marcionicolau@me.com>
 Description: Extensions from jQuery and Twitter Bootstrap functionalities.
