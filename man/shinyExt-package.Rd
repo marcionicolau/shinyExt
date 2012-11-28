@@ -12,8 +12,8 @@ Add Extra functionalities from jQuery and Twitter Bootstrap for shiny.
 \tabular{ll}{
 Package: \tab shinyExt\cr
 Type: \tab Package\cr
-Version: \tab 0.0.1\cr
-Date: \tab 2012-11-21\cr
+Version: \tab 0.0.3\cr
+Date: \tab 2012-11-28\cr
 License: \tab GPL-3\cr
 }
 Use in the same way like shiny package
@@ -28,8 +28,7 @@ jQuery
 }
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[shiny:shiny-package]{shiny}} ~~
+ \code{\link[shiny:shiny-package]{shiny}} 
 }
 \examples{
 

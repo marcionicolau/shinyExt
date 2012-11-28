@@ -3,9 +3,6 @@ shinyExt
 
 A minimal additional functions for [shiny](https://github.com/rstudio/shiny) based on [jQuery](http://www.jquery.org) and [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html).
 
-<<<<<<< HEAD
-Some examples and functions were borrowed from [shiny](https://github.com/rstudio/shiny) and [shinyIncubator](https://github.com/rstudio/shiny-incubator).
-=======
 Some examples and functions were borrowed from [shiny](https://github.com/rstudio/shiny) and [shinyIncubator](https://github.com/rstudio/shiny-incubator).
 
 
@@ -21,4 +18,4 @@ shinyExt 0.0.2
 
 * Action Button
 * Password Input
->>>>>>> RStudio
+* Experimenter example
