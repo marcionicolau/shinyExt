@@ -81,6 +81,9 @@ jQuery(function($) {
       $(el).on('change.daterangePickerBinding', function(event) {
         callback(false);
       });
+      $(el).on('blur.daterangePickerBinding', function(event) {
+        callback(true);
+      });
     },
     unsubscribe: function(el) {
       $(el).off('.daterangePickerBinding');
@@ -93,6 +96,4 @@ jQuery(function($) {
     }    
   });
   Shiny.inputBindings.register(daterangePickerBinding, 'shiny.daterangePicker');
-//  var drp = $.find('input[name=daterange-picker]');
-//  $(drp).daterangepicker();
 })

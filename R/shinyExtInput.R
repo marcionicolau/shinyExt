@@ -18,7 +18,7 @@ passwordInput <- function(inputId, label) {
                                  package='shinyExt')
     )
   tagList(
-    singleton(tags$head(tags$script(src = 'shinyExt/inputExt.js'))),
+    singleton(tags$head(tags$script(src = 'shinyExt/js/inputExt.js'))),
     tags$label(label),
     tags$input(id = inputId, type="password", value="")
   )
@@ -41,7 +41,7 @@ actionButton <- function(inputId, label) {
     directoryPath=system.file('inputExt', 
                               package='shinyExt'))
   tagList(
-    singleton(tags$head(tags$script(src = 'shinyExt/inputExt.js'))),
+    singleton(tags$head(tags$script(src = 'shinyExt/js/inputExt.js'))),
     tags$button(id=inputId, type="button", class="btn action-button", label)
   )
 }
@@ -65,11 +65,16 @@ daterangePicker <- function(inputId, label) {
     directoryPath=system.file('inputExt', 
                               package='shinyExt'))
   tagList(
-    singleton(tags$head(tags$script(src = 'shinyExt/inputExt.js'),
-                        tags$script(src = 'shinyExt/date.js'),
-                        tags$script(src = 'shinyExt/daterangepicker.js'),
+    singleton(tags$head(tags$script(src = 'shinyExt/js/inputExt.js'),
+                        tags$script(src = 'shinyExt/js/date.js'),
+                        tags$script(src = 'shinyExt/js/daterangepicker.js'),
                         tags$link(rel = "stylesheet", type = "text/css",
-                                  href = 'shinyExt/daterangepicker.css'))),
+                                  href = 'shinyExt/css/daterangepicker.css'),
+                        tags$script(src = 'shinyExt/js/jquery-common.js')
+#                         tags$script("$(document).ready(function() {
+#                                         $('input[name=daterange-picker]').daterangepicker();
+#                                     });", type = 'text/javascript')
+                        )),
     tags$label(label),
     tags$input(id = inputId, type="text", value="", name ="daterange-picker")
   )

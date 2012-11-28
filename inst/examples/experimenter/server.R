@@ -37,6 +37,12 @@ shinyServer(function(input, output) {
     input$passwd
   })
   
+  output$filter_date2 <- reactiveText(function() {
+    info <- input$input_period
+    dates <- unlist(strsplit(info, ' - '))
+    sprintf("You select a window from %s to %s", dates[1], dates[2])
+  })
+  
   # The output$summary depends on the datasetInput reactive function, 
   # so will be re-executed whenever datasetInput is re-executed 
   # (i.e. whenever the input$dataset changes)
