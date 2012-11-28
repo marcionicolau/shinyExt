@@ -70,11 +70,7 @@ daterangePicker <- function(inputId, label) {
                         tags$script(src = 'shinyExt/js/daterangepicker.js'),
                         tags$link(rel = "stylesheet", type = "text/css",
                                   href = 'shinyExt/css/daterangepicker.css'),
-                        tags$script(src = 'shinyExt/js/jquery-common.js')
-#                         tags$script("$(document).ready(function() {
-#                                         $('input[name=daterange-picker]').daterangepicker();
-#                                     });", type = 'text/javascript')
-                        )),
+                        tags$script(src = 'shinyExt/js/jquery-common.js'))),
     tags$label(label),
     tags$input(id = inputId, type="text", value="", name ="daterange-picker")
   )
