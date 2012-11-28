@@ -18,4 +18,3 @@ shinyExt 0.0.2
 
 * Action Button
 * Password Input
-* Experimenter example

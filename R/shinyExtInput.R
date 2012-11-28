@@ -75,4 +75,3 @@ daterangePicker <- function(inputId, label) {
     tags$input(id = inputId, type="text", value="", name ="daterange-picker")
   )
 }
-

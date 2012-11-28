@@ -28,7 +28,7 @@ jQuery
 }
 \keyword{ package }
 \seealso{
- \code{\link[shiny:shiny-package]{shiny}} 
+\code{\link[shiny:shiny-package]{shiny}} 
 }
 \examples{
 

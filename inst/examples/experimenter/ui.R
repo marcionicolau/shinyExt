@@ -21,7 +21,8 @@ shinyUI(pageWithSidebar(
     
     numericInput("obs", "Number of observations to view:", 10),
     
-    daterangePicker("input_period", "Select a window period:")    
+    daterangePicker("input_period", "Select a range period:")
+    
   ),
   
   
@@ -42,7 +43,6 @@ shinyUI(pageWithSidebar(
       tabPanel("Secret", 
                textOutput("pwd"),
                br(),
-               textOutput("filter_date1"),
                textOutput("filter_date2"))
     )
   )
