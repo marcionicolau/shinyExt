@@ -18,7 +18,7 @@ passwordInput <- function(inputId, label) {
                                  package='shinyExt')
     )
   tagList(
-    singleton(tags$head(tags$script(src = 'shinyExt/inputExt.js'))),
+    singleton(tags$head(tags$script(src = 'shinyExt/js/inputExt.js'))),
     tags$label(label),
     tags$input(id = inputId, type="password", value="")
   )
@@ -41,7 +41,37 @@ actionButton <- function(inputId, label) {
     directoryPath=system.file('inputExt', 
                               package='shinyExt'))
   tagList(
-    singleton(tags$head(tags$script(src = 'shinyExt/inputExt.js'))),
+    singleton(tags$head(tags$script(src = 'shinyExt/js/inputExt.js'))),
     tags$button(id=inputId, type="button", class="btn action-button", label)
+  )
+}
+
+#' Date Range Piker
+#' 
+#' Creates a dropdown menu from which a user can select a range of dates.
+#' This is based on https://github.com/dangrossman/bootstrap-daterangepicker.
+#' 
+#' @seealso [bootstrap-daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker) 
+#' 
+#' @param inputId Specifies the input slot that will be used to access the 
+#'  value.
+#' @param label The contents of the button--usually a text label, but you could
+#'   also use any other HTML, like an image.
+#'   
+#' @export
+daterangePicker <- function(inputId, label) {
+  addResourcePath(
+    prefix='shinyExt', 
+    directoryPath=system.file('inputExt', 
+                              package='shinyExt'))
+  tagList(
+    singleton(tags$head(tags$script(src = 'shinyExt/js/inputExt.js'),
+                        tags$script(src = 'shinyExt/js/date.js'),
+                        tags$script(src = 'shinyExt/js/daterangepicker.js'),
+                        tags$link(rel = "stylesheet", type = "text/css",
+                                  href = 'shinyExt/css/daterangepicker.css'),
+                        tags$script(src = 'shinyExt/js/jquery-common.js'))),
+    tags$label(label),
+    tags$input(id = inputId, type="text", value="", name ="daterange-picker")
   )
 }

@@ -1,3 +1,4 @@
 export(actionButton)
+export(daterangePicker)
 export(passwordInput)
 import(shiny)
