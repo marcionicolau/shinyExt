@@ -79,11 +79,11 @@ jQuery(function($) {
         callback(true);
       });
       $(el).on('change.daterangePickerBinding', function(event) {
-        callback(true); //false
+        callback(false); 
       });
-      //$(el).on('blur.daterangePickerBinding', function(event) {
-      //  callback(true);
-      //});
+      $(el).on('blur.daterangePickerBinding', function(event) {
+        callback(true);
+      });
     },
     unsubscribe: function(el) {
       $(el).off('.daterangePickerBinding');
