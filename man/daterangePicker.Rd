@@ -1,6 +1,6 @@
 \name{daterangePicker}
 \alias{daterangePicker}
-\title{Date Range Piker}
+\title{Date Range Picker}
 \usage{
   daterangePicker(inputId, label)
 }
