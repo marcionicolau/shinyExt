@@ -96,4 +96,42 @@ jQuery(function($) {
     }    
   });
   Shiny.inputBindings.register(daterangePickerBinding, 'shiny.daterangePicker');
+
+    // bootstrap-datePicker
+  var datePickerBinding = new Shiny.InputBinding();
+  $.extend(datePickerBinding, {
+    find: function(scope) {
+      return $(scope).find('input[name="bootstrap-date-picker"]');
+    },
+    getId: function(el) {
+      return Shiny.InputBinding.prototype.getId.call(this, el) || el.name;
+    },
+    getValue: function(el) {
+      return el.value;
+    },
+    setValue: function(el, value) {
+      el.value = value;
+    },
+    subscribe: function(el, callback) {
+      $(el).on('keyup.datePickerBinding input.datePickerBinding', function(event) {
+        callback(true);
+      });
+      $(el).on('change.datePickerBinding', function(event) {
+        callback(true); //false
+      });
+      //$(el).on('blur.datePickerBinding', function(event) {
+      //  callback(true);
+      //});
+    },
+    unsubscribe: function(el) {
+      $(el).off('.datePickerBinding');
+    },
+    getRatePolicy: function() {
+      return {
+        policy: 'debounce',
+        delay: 250
+      };
+    }    
+  });
+  Shiny.inputBindings.register(datePickerBinding, 'shiny.datePicker');
 })

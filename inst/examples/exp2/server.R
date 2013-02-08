@@ -41,7 +41,8 @@ shinyServer(function(input, output) {
   output$filter_date2 <- reactiveText(function() {
     info <- input$input_period
     dates <- unlist(strsplit(info, ' - '))
-    sprintf("You select a window from %s to %s", dates[1], dates[2])
+    sprintf("You select a window from '%s' to '%s' and a start date '%s'", 
+            dates[1], dates[2], input$in_date)
   })
   
   # The output$summary depends on the datasetInput reactive function, 

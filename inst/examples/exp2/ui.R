@@ -23,7 +23,10 @@ shinyUI(pageWithSidebar(
     
     numericInput("obs", "Number of observations to view:", 10),
     
-    daterangePicker("input_period", "Select a range period:")
+    daterangePicker("input_period", "Select a range period:"),
+    
+    datePicker("in_date", "Select a date:", default="01-01-2013",
+               format="dd/mm/yyyy")
     
   ),
   
