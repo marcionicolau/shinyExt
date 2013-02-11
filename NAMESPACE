@@ -1,5 +1,7 @@
 export(actionButton)
 export(datePicker)
 export(daterangePicker)
+export(navbarPanel)
+export(pageWithNavbar)
 export(passwordInput)
 import(shiny)

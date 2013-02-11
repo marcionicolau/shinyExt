@@ -13,6 +13,7 @@ $.extend(navbarBinding, {
   subscribe: function(el, callback) {
     var self = this;
     $(el).on("click.navbarBinding", "a[data-view]", function(e) {
+      alert(e.target.id);
       if (e.target.id) {
         $(el).data("navbarBinding-lastClick", {
           link: $(e.target).data("view"),

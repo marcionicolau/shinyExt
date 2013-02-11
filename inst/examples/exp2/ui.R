@@ -2,10 +2,10 @@ library(shiny)
 library(shinyExt)
 
 # Define UI for dataset viewer application
-shinyUI(pageWithSidebar(
+shinyUI(pageWithNavbar(
   
   # Application title
-  headerPanel("Reactivity - Laboratory"),
+ navbarPanel("menu-001"),
   
   # Sidebar with controls to provide a caption, select a dataset, and 
   # specify the number of observations to view. Note that changes made

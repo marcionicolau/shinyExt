@@ -1,13 +1,3 @@
-addResourcePath(
-  prefix='shinyExt',
-  directoryPath =  system.file('inputExt',
-                               package='shinyExt')
-)
-tagList(
-  singleton(tags$head(tags$script(src = 'shinyExt/js/navbarBinding.js')))
-)
-
-
 #' Create a password input control
 #' 
 #' Create an input control for entry of password values
@@ -118,5 +108,64 @@ datePicker <- function(inputId, label, default=Sys.Date(),
                value=default, 
                name ="bootstrap-date-picker",
                'data-date-format'=format)
+  )
+}
+
+#' Create a top navbar input panel
+#' 
+#' Create an input control for a top navigation bar menu panel
+#' 
+#' @param inputId Input variable to assign the control's value to
+#' @return A navbar menu that can be added to a UI definition.
+#' 
+#' @export
+navbarPanel <- function(inputId) {
+#   addResourcePath(
+#     prefix='shinyExt',
+#     directoryPath =  system.file('inputExt',
+#                                  package='shinyExt')
+#   )
+  tagList(
+    singleton(tags$head(tags$script(src = 'shinyExt/js/navbarBinding.js'))),
+    div(id = inputId, class="navbar",
+      div(class="navbar-inner",
+        a(class="brand", href="#", "Title"),
+               tags$ul(class="nav",
+                  tags$li(class="active", 
+                    a(href="#", "Home")),
+                  tags$li(tags$a(id="mnu-001", href="#", "Link 1")),
+                  tags$li(tags$a(id="mnu-002", href="#", "Link 2"))))
+             )
+  )
+}
+
+
+#' Create a page with a top navbar menu and a sidebar
+#'
+#' Create a Shiny UI that contains a top navbar menu with the application title and 
+#' shiny Application contents, a sidebar for input controls, and a main area 
+#' for output.
+#'
+#' @param navbarPanel The \link{navbarPanel} with the application title and contents
+#' @param sidebarPanel The \link{sidebarPanel} containing input controls
+#' @param mainPanel The \link{mainPanel} containing outputs
+#' @return A UI defintion that can be passed to the \link{shinyUI} function
+#'
+#'
+#' @export
+pageWithNavbar <- function(navbarPanel, sidebarPanel, mainPanel) {
+  
+  bootstrapPage(
+    # basic application container divs
+    div(
+      class="container-fluid",
+      div(class="row-fluid",
+          navbarPanel
+      ),
+      div(class="row-fluid",
+          sidebarPanel,
+          mainPanel
+      )
+    )
   )
 }
