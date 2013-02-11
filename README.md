@@ -3,10 +3,10 @@ shinyExt
 
 A minimal additional functions for [shiny](https://github.com/rstudio/shiny) based on:
 
-	* [jQuery](http://www.jquery.org) 
-	* [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html)
-	* [bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
-	* [Date Range Picker for Twitter Bootstrap](https://github.com/dangrossman/bootstrap-daterangepicker)
+* [jQuery](http://www.jquery.org) 
+* [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html)
+* [bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
+* [Date Range Picker for Twitter Bootstrap](https://github.com/dangrossman/bootstrap-daterangepicker)
 
 Some examples and functions were borrowed from [shiny](https://github.com/rstudio/shiny) and [shinyIncubator](https://github.com/rstudio/shiny-incubator).
 
