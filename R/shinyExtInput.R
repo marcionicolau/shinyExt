@@ -1,3 +1,13 @@
+addResourcePath(
+  prefix='shinyExt',
+  directoryPath =  system.file('inputExt',
+                               package='shinyExt')
+)
+tagList(
+  singleton(tags$head(tags$script(src = 'shinyExt/js/navbarBinding.js')))
+)
+
+
 #' Create a password input control
 #' 
 #' Create an input control for entry of password values
