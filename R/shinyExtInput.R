@@ -118,6 +118,7 @@ datePicker <- function(inputId, label, default=Sys.Date(),
 #' @param inputId Input variable to assign the control's value to
 #' @return A navbar menu that can be added to a UI definition.
 #' 
+#' @export
 navbarPanel <- function(inputId) {
 #   addResourcePath(
 #     prefix='shinyExt',
@@ -151,6 +152,7 @@ navbarPanel <- function(inputId) {
 #' @return A UI defintion that can be passed to the \link{shinyUI} function
 #'
 #'
+#' @export
 pageWithNavbar <- function(navbarPanel, sidebarPanel, mainPanel) {
   
   bootstrapPage(
