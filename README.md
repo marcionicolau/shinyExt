@@ -13,6 +13,12 @@ Some examples and functions were borrowed from [shiny](https://github.com/rstudi
 
 ### NEWS
 
+shinyExt 0.0.4
+--------------------------------------------------------------------------------
+
+* select2
+* navbarPanel (dev)
+
 shinyExt 0.0.3
 --------------------------------------------------------------------------------
 
