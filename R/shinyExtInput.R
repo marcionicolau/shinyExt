@@ -118,7 +118,6 @@ datePicker <- function(inputId, label, default=Sys.Date(),
 #' @param inputId Input variable to assign the control's value to
 #' @return A navbar menu that can be added to a UI definition.
 #' 
-#' @export
 navbarPanel <- function(inputId) {
 #   addResourcePath(
 #     prefix='shinyExt',
@@ -152,7 +151,6 @@ navbarPanel <- function(inputId) {
 #' @return A UI defintion that can be passed to the \link{shinyUI} function
 #'
 #'
-#' @export
 pageWithNavbar <- function(navbarPanel, sidebarPanel, mainPanel) {
   
   bootstrapPage(
@@ -167,5 +165,36 @@ pageWithNavbar <- function(navbarPanel, sidebarPanel, mainPanel) {
           mainPanel
       )
     )
+  )
+}
+
+#' Simple Select2 Wrapper for selectInput shiny control
+#' 
+#' Create a Select2 input control. Code is based on development
+#' from David, Vicent, Joe and others from shiny-discuss group
+#' 
+#' @param inputId Input variable to assign the control's value to
+#' @param label Display label for the control
+#' @param choices	List of values to select from
+#' @param selected	Name of initially selected item (or multiple names 
+#' if multiple = TRUE). 
+#' @param multiple Is selection of multiple items allowed?
+#' 
+#' @return A select2 input control that can be added to a UI definition.
+#' 
+#' @examples
+#' select2Input("select2_in", "Select:", c("Cylinders" = "cyl",
+#' "Transmission" = "am", "Gears" = "gear"), multiple=FALSE)
+#' 
+#' @export
+select2Input <- function(inputId, label, choices, 
+                         selected=NULL, multiple=FALSE) {
+  tagList(
+    tags$link(href="shinyExt/css/select2.css",rel="stylesheet",type="text/css"),
+    tags$script(src="shinyExt/js/select2.js"),
+    selectInput(inputId=inputId, label=label, choices=choices,
+                selected=selected, multiple=multiple),
+    tags$script(paste("$(function() { $('#", inputId, "').select2({width:'resolve'}); });", 
+                      sep=""))
   )
 }
