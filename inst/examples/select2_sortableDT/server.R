@@ -12,7 +12,7 @@ shinyServer(function(input, output) {
 	})
 
       
-  output$tool1_result <- reactiveDataTable("example",function() {
+  output$tool1_result <- reactiveDataTable("tbl_dataset",function() {
     if (input$output_selection == 0 || is.null(input$output_selection)) {
       count <<- 0 
       return(NULL)

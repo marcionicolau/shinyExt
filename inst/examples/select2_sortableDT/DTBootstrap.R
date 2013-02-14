@@ -1,32 +1,39 @@
-# library stringr is used: function str_c
-library(stringr)
 # libray xtable used in creating the table
 library(xtable)
 
-htmlTableHead <- function(df)
+htmlTableHead <- function(dataframe,include.rownames=TRUE)
 {
-  cNames = colnames(df)
-  res = paste('<TR> <TH> ', str_c(cNames, collapse='</TH> \n <TH> '), '</TH> \n </TR>')
-  thead = paste(c('<thead>', res, '</thead>'), sep='\n', collapse=' ')
-  return(thead)
+  thinfo <- if(include.rownames) c("",names(dataframe)) else names(dataframe)
+  paste(c("<thead>", "<tr>", 
+          sprintf("<th> %s </th>", thinfo), 
+          "</tr>","</thead>"), 
+        collapse='\n')
 }
 
-htmlTable <- function(df,table_id)
+htmlTable <- function(dataframe,table_id, align="right",
+                      include.rownames=TRUE)
 {
-  thead = htmlTableHead(df)
-  res = capture.output(print(xtable(df), type='html', only.contents=TRUE,include.rownames=FALSE, include.colnames=FALSE, sep='\n'))
-  tbody = paste(c('<tbody>', res, '</tbody>'), sep='\n', collapse=' ')
+  alg = paste(rep(gsub("(.).*","\\1", align),ncol(dataframe)+1),collapse="")
+  res = capture.output(print(xtable(dataframe, align=alg), 
+                             type='html', 
+                             only.contents=TRUE,
+                             include.rownames=include.rownames, 
+                             include.colnames=FALSE))
   
-  tblHtmlS = paste('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="',table_id,'">',sep="")
-  tblHtmlE = '</table>'
-  
-  tbl = paste(c(tblHtmlS, thead, tbody, tblHtmlE), sep='\n', collapse=' ')
-  
+  tbl = paste(c(sprintf('<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="%s">', table_id),
+                htmlTableHead(dataframe, include.rownames=include.rownames),
+                "<tbody>",
+                res,
+                "</tbody>",
+                "</table>"),
+              collapse='\n')
   return(tbl)
 }
 
 DataTableScript <- function(table_id) {
-  return(paste("<script>$(function() {$('#",table_id,"').dataTable({\"aaSorting\": [[4,'asc']]}); });</script>",sep=""))
+  tagList(
+    tags$script(sprintf("$('#%s').dataTable({'aaSorting': [[0,'asc']]});",table_id))
+    )
 }
 
 reactiveDataTable <- function(table_id,func) 
@@ -36,6 +43,11 @@ reactiveDataTable <- function(table_id,func)
     data <- func()
     if (is.null(data) || is.na(data))
       return(paste(em("Preparing table ...")))
-    return(paste(htmlTable(data,table_id),DataTableScript(table_id)))
+    return(paste(htmlTable(data, 
+                           table_id, 
+                           include.rownames=TRUE),
+                 DataTableScript(table_id),
+                 collapse='\n')
+    )
   })
 }

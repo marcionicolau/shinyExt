@@ -7,6 +7,7 @@ A minimal additional functions for [shiny](https://github.com/rstudio/shiny) bas
 * [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html)
 * [bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
 * [Date Range Picker for Twitter Bootstrap](https://github.com/dangrossman/bootstrap-daterangepicker)
+* [jQuery DataTables](www.datatables.net)
 
 Some examples and functions were borrowed from [shiny](https://github.com/rstudio/shiny) and [shinyIncubator](https://github.com/rstudio/shiny-incubator).
 

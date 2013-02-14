@@ -18,15 +18,20 @@ shinyUI(
     
     mainPanel(
       conditionalPanel(
-        condition = "input.output_selection > 0",
+        condition = "input.output_selection > 0", 
+        tableOutput("tool1_result"),
         tagList(
-          tags$link(href="css/DT_bootstrap.css",rel="stylesheet",type="text/css"),
-          tags$script(src="js/jquery.dataTables.js",type="text/javascript"),
-          tags$script(src="js/dataTables.numericCommaSort.js",type="text/javascript"),
-          tags$script(src="js/dataTables.numericCommaTypeDetect.js",type="text/javascript"),
-          tags$script(src="js/DT_bootstrap.js",type="text/javascript"),
-          tableOutput("tool1_result")
-        )
+            tags$link(href="css/DT_bootstrap.css",rel="stylesheet",
+                      type="text/css"),
+            tags$script(src="js/jquery.dataTables.min.js",
+                        type="text/javascript"),
+            tags$script(src="js/dataTables.numericCommaSort.js",
+                        type="text/javascript"),
+            tags$script(src="js/dataTables.numericCommaTypeDetect.js",
+                        type="text/javascript"),
+            tags$script(src="js/DT_bootstrap.js",
+                      type="text/javascript")       
+          )
       )
     )
   )
