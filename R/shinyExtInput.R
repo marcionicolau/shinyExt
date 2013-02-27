@@ -59,7 +59,7 @@ actionButton <- function(inputId, label) {
 #'   also use any other HTML, like an image.
 #'   
 #' @export
-daterangePicker <- function(inputId, label) {
+daterangePicker <- function(inputId, label, default="") {
   addResourcePath(
     prefix='shinyExt', 
     directoryPath=system.file('inputExt', 
@@ -72,7 +72,7 @@ daterangePicker <- function(inputId, label) {
                                   href = 'shinyExt/css/daterangepicker.css'),
                         tags$script(src = 'shinyExt/js/jquery-common.js'))),
     tags$label(label),
-    tags$input(id = inputId, type="text", value="", name ="daterange-picker")
+    tags$input(id = inputId, type="text", value=default, name ="daterange-picker")
   )
 }
 
