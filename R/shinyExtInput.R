@@ -57,6 +57,7 @@ actionButton <- function(inputId, label) {
 #'  value.
 #' @param label The contents of the button--usually a text label, but you could
 #'   also use any other HTML, like an image.
+#' @param default Specify a default input value as a character vector.
 #'   
 #' @export
 daterangePicker <- function(inputId, label, default="") {
