@@ -19,7 +19,7 @@ shinyExt 0.0.4
 
 * select2
 * navbarPanel (dev)
-* 
+* User/Project@SHA: mojombo/god@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2
 * handsonTable, based on cafe876/Shiny-Sandbox@559d19ae37ef67651f7acd15998100631ba11f1d, yannrichet/Shiny-Sandbox@559d19ae37 and brianbolt/rShinyApps@215a055f800ab9
 
 shinyExt 0.0.3
