@@ -3,7 +3,7 @@ shinyExt 0.0.4
 
 * select2
 * navbarPanel (dev)
-* handsonTable
+* handsonTable, based ond cafe876/Shiny-Sandbox, yannrichet/Shiny-Sandbox and brianbolt/rShinyApps
 
 shinyExt 0.0.3
 --------------------------------------------------------------------------------
