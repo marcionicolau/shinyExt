@@ -2,7 +2,7 @@ count <- NULL
 
 shinyServer(function(input, output) {
 
-	output$tool1s <- reactiveUI(function() {
+	output$tool1s <- renderUI({
 		select2Input("tool1_select2", label = "Cars:", 
                  choices = switch(input$num_cyl,
                                   "6" = as.list(rownames(mtcars[mtcars$cyl==6,])),
@@ -12,7 +12,7 @@ shinyServer(function(input, output) {
 	})
 
       
-  output$tool1_result <- reactiveDataTable("tbl_dataset",function() {
+  output$tool1_result <- renderDataTable("tbl_dataset",function() {
     if (input$output_selection == 0 || is.null(input$output_selection)) {
       count <<- 0 
       return(NULL)

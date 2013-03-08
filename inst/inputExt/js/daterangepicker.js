@@ -26,7 +26,6 @@
             'This Month': [Date.today().moveToFirstDayOfMonth(), Date.today().moveToLastDayOfMonth()],
             'Last Month': [Date.today().moveToFirstDayOfMonth().add({ months: -1 }), 
                             Date.today().moveToFirstDayOfMonth().add({ days: -1 })]
-            }
         };
         this.opens = 'right';
         this.cb = function () { };

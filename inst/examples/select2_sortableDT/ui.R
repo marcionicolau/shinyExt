@@ -12,26 +12,30 @@ shinyUI(
       br(),
       uiOutput("tool1s"),
       br(),
-      actionButton("output_selection","Show Selections")
+      actionButton("output_selection","Show Selections"),
+      daterangePicker("input_period", "Select a range period:"),
+      
+      datePicker("in_date", "Select a date:", default="01-01-2013",
+                 format="dd/mm/yyyy")
       
     ),
     
     mainPanel(
       conditionalPanel(
         condition = "input.output_selection > 0", 
-        tableOutput("tool1_result"),
-        tagList(
-            tags$link(href="css/DT_bootstrap.css",rel="stylesheet",
-                      type="text/css"),
-            tags$script(src="js/jquery.dataTables.min.js",
-                        type="text/javascript"),
-            tags$script(src="js/dataTables.numericCommaSort.js",
-                        type="text/javascript"),
-            tags$script(src="js/dataTables.numericCommaTypeDetect.js",
-                        type="text/javascript"),
-            tags$script(src="js/DT_bootstrap.js",
-                      type="text/javascript")       
-          )
+        tableOutput("tool1_result")
+#         tagList(
+#             tags$link(href="css/DT_bootstrap.css",rel="stylesheet",
+#                       type="text/css"),
+#             tags$script(src="js/jquery.dataTables.min.js",
+#                         type="text/javascript"),
+#             tags$script(src="js/dataTables.numericCommaSort.js",
+#                         type="text/javascript"),
+#             tags$script(src="js/dataTables.numericCommaTypeDetect.js",
+#                         type="text/javascript"),
+#             tags$script(src="js/DT_bootstrap.js",
+#                       type="text/javascript")       
+#           )
       )
     )
   )

@@ -21,3 +21,4 @@ BugReports: https://github.com/marcionicolau/shinyExt/issues
 Collate:
     'shinyExtInput.R'
     'handsonTable.R'
+    'DTBootstrap.R'

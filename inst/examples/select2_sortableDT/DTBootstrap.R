@@ -36,10 +36,9 @@ DataTableScript <- function(table_id) {
     )
 }
 
-reactiveDataTable <- function(table_id,func) 
+renderDataTable <- function(table_id,func) 
 {
-  reactive(function() 
-  {
+  reactive({
     data <- func()
     if (is.null(data) || is.na(data))
       return(paste(em("Preparing table ...")))
