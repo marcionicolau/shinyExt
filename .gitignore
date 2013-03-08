@@ -4,3 +4,4 @@
 .Rprofile
 .RData
 *.Rproj
+*.Rhistory

@@ -41,6 +41,16 @@ shinyExt 0.0.2
 - [ ] Finish **NavBar** and **pageWithNavBar** functions
 - [x] Introduced **HandsonTable** from cafe876/Shiny-Sandbox, yannrichet/Shiny-Sandbox and brianbolt/rShinyApps
 
+### Contributors
+
+- David Patschke <davidpatschke at gmail.com>
+- Vincent Nijs <mostly.harmless.71 at gmail.com>[github](https://github.com/mostly-harmless/radyant.git)
+- Joe Cheng <joe at rstudio.com>[github](https://github.com/jcheng5)
+- Nassim Haddad <cafe876 at gmail.com>[github](https://github.com/cafe876)
+- Yann Richet <richetyann at gmail.com>[github](https://github.com/yannrichet)
+- Brian Bolt <briancbolt at gmail.com>[github](https://github.com/brianbolt)
+
+
 ### License
 The shinyExt package is licensed under the GPLv3. See the files listed below for additional details.
 
