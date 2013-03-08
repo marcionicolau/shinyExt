@@ -79,7 +79,7 @@ renderDataTable <- function(table_id,func) {
   tagList(
     tags$link(href="shinyExt/css/DT_bootstrap.css",rel="stylesheet",
               type="text/css"),
-    tags$script(src="shinyExt/js/DT_bootstrap/jquery.dataTables.min.js",
+    tags$script(src="shinyExt/js/DT_bootstrap/jquery.dataTables.js",
                 type="text/javascript"),
     tags$script(src="shinyExt/js/DT_bootstrap/dataTables.numericCommaSort.js",
                 type="text/javascript"),
