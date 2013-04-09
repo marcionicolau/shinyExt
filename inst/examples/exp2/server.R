@@ -13,7 +13,7 @@ shinyServer(function(input, output) {
   #     new result is compared to the previous result; if the two are
   #     identical, then the callers are not notified
   #
-  datasetInput <- reactive(function() {
+  datasetInput <- reactive({
     switch(input$dataset,
            "rock" = rock,
            "pressure" = pressure,
@@ -29,16 +29,16 @@ shinyServer(function(input, output) {
   # Note that because the data-oriented reactive functions below don't 
   # depend on input$caption, those functions are NOT called when 
   # input$caption changes.
-  output$caption <- reactiveText(function() {
+  output$caption <- renderText({
     input$caption
   })
   
-  output$pwd <- reactiveText(function() {
+  output$pwd <- renderText({
     sprintf("Password (ShinyExt) '%s' and password (HTML) '%s'", 
       input$passwd, input$bpassword)
   })
   
-  output$filter_date2 <- reactiveText(function() {
+  output$filter_date2 <- renderText({
     info <- input$input_period
     dates <- unlist(strsplit(info, ' - '))
     sprintf("You select a window from '%s' to '%s' and a start date '%s'", 
@@ -48,7 +48,7 @@ shinyServer(function(input, output) {
   # The output$summary depends on the datasetInput reactive function, 
   # so will be re-executed whenever datasetInput is re-executed 
   # (i.e. whenever the input$dataset changes)
-  output$summary <- reactivePrint(function() {
+  output$summary <- renderPrint({
     dataset <- datasetInput()
     summary(dataset)
   })
@@ -56,11 +56,11 @@ shinyServer(function(input, output) {
   # The output$view depends on both the databaseInput reactive function
   # and input$obs, so will be re-executed whenever input$dataset or 
   # input$obs is changed. 
-  output$view <- reactiveTable(function() {
+  output$view <- renderTable({
     head(datasetInput(), n = input$obs)
   })
   
-  output$plot <- reactivePlot(function() {
+  output$plot <- renderPlot({
     input$btn_newSample
     n = 100 * input$obs
     hist(rnorm(n))
