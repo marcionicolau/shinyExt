@@ -1,4 +1,4 @@
-(document).ready(function() {
+jQuery(document).ready(function($){
   if ($('input[name=daterange-picker]').length != 0){
     $('input[name=daterange-picker]').daterangepicker();
   }
