@@ -1,0 +1,3 @@
+[submodule "contrib/yannrichet"]
+	path = contrib/yannrichet
+	url = https://github.com/yannrichet/Shiny-Sandbox.git
